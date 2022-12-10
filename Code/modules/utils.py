@@ -4,6 +4,7 @@ import numpy as np
 import skimage.io as io
 import matplotlib.pyplot as plt
 import math
+from openpyxl import load_workbook
 
 # Read RGB image uisng CV and result is a RGB image
 def Read_RGB_Image(path):
@@ -111,3 +112,45 @@ def findLargestQuadrilateralContour(contours):
             break
 
     return [biggest_contour], [biggest_contour_approx]
+
+# This function fills the excel sheet wiht the marks to the student with a certain id
+####### Args ##########
+# file_name : name ( path ) of the excel file ( without the extension )
+# id : student id
+# marks : array of the marks
+def fill_grades(file_name, id, marks):
+    
+    # reading the file
+    file_name = file_name + ".xlsx"
+    file = load_workbook(file_name)
+    sheet = file.active
+
+    # Extracting some info
+    num_of_questions = len(marks);
+    id_location = 0;
+
+    # searching for the id
+    for index, cell in enumerate(sheet['A']):
+        if(cell.value == id):
+            id_location = index + 1;
+            break;
+        
+    
+    # if the id was not found, throw an exception
+    if(id_location == 0):
+        raise Exception("Id is not found")
+    
+    # assigning the marks to the row
+    counter = 0;
+    for cell in (sheet.cell(row=id_location,column=i) for i in range(4, 4 + num_of_questions)):
+        cell.value = marks[counter]
+        counter = counter + 1
+            
+#     for index, cell in enumerate(sheet[id_location]):
+#         if(index >= 3):
+#             cell.value = marks[counter]
+#             counter = counter + 1
+        
+    # save the file with a new name
+    file.save(file_name)
+    return True
