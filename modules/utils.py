@@ -3,6 +3,8 @@ import cv2 as cv
 import numpy as np
 import skimage.io as io
 import matplotlib.pyplot as plt
+from skimage.color import rgb2gray,rgb2hsv
+import pytesseract
 import math
 
 # Read RGB image uisng CV and result is a RGB image

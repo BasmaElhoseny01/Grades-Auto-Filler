@@ -12,10 +12,6 @@ def Read_RGB_Image(path):
     RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     return RGB_img
 
-# Read Gray image uisng CV and result is a Gray image
-def Read_GrayScale_Image(path):
-    image=cv.imread(path,0)
-    return image
 
 
 def show_images(images,titles=None):
