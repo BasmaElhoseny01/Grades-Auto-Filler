@@ -121,6 +121,8 @@ def ExtractPaper(ImagePath):
     pts2 = np.float32([[0, 0],[imgWidth, 0], [0, imgHeight],[imgWidth, imgHeight]])#DST
     matrix = cv2.getPerspectiveTransform(pts1, pts2)
     WarpedGrayImage = cv2.warpPerspective(img_gray, matrix, (imgWidth, imgHeight))
+    WarpedColoredImage = cv2.warpPerspective(img_RGB, matrix, (imgWidth, imgHeight))
+    
     # show_images([WarpedGrayImage],titles=['WarpedGrayImage'])
     print(np.shape(WarpedGrayImage))
 
@@ -133,5 +135,5 @@ def ExtractPaper(ImagePath):
     else: 
         Wrapped=True
 
-    show_images([img_RGB,image_with_contours,biggest_contour_img,WarpedGrayImage],['Original','All Contours','BiggestContour','WarpedGrayImage'])
-    return (WarpedGrayImage,Wrapped)
+    show_images([img_RGB,image_with_contours,biggest_contour_img,WarpedColoredImage,WarpedGrayImage],['Original','All Contours','BiggestContour','WarpedColoredImage','WarpedGrayImage'])
+    return (WarpedColoredImage,WarpedGrayImage,Wrapped)

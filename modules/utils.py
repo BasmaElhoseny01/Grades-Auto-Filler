@@ -1,11 +1,16 @@
 # Imports
 import cv2
 import numpy as np
+import pandas as pd
 import skimage.io as io
 import matplotlib.pyplot as plt
 from skimage.color import rgb2gray,rgb2hsv
-import pytesseract
 import math
+
+import pytesseract
+from sklearn import svm
+from skimage.feature import hog
+
 
 # Read RGB image uisng CV and result is a RGB image
 def Read_RGB_Image(path):
