@@ -48,7 +48,7 @@ def get_digit(image):
     sharpen_kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
     sharpen = cv2.filter2D(image, -1, sharpen_kernel)
     thresh = cv2.threshold(sharpen, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
-    show_images([thresh], ['thresholded image'])
+    # show_images([thresh], ['thresholded image'])
     possible_values_for_1 = ['|', 'i', 'I', '!', '/', "\\"]
     # OCR
     # conf = '--psm 13 --oem 1 -c tessedit_char_whitelist=0123456789'

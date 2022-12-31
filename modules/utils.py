@@ -15,11 +15,11 @@ import os
 
 
 # Read RGB image uisng CV and result is a RGB image
-def Read_RGB_Image(path):
-    image=cv.imread(path,1)#cv2.IMREAD_COLOR: It specifies to load a color image. Any transparency of image will be neglected.
-    # Converting BGR color to RGB color format
-    RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-    return RGB_img
+# def Read_RGB_Image(path):
+#     image=cv.imread(path,1)#cv2.IMREAD_COLOR: It specifies to load a color image. Any transparency of image will be neglected.
+#     # Converting BGR color to RGB color format
+#     RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+#     return RGB_img
 
 
 def HogFun(img_1):

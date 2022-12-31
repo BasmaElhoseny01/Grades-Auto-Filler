@@ -1,5 +1,0 @@
-1.
-2.Skewness[Orignal image & out of paper_extraction]
-3.Detect Table by lines[Zeinab] [Orignal out of skew and Out of extraction after skew]
-4.Detect Cell
-5.OCRs
