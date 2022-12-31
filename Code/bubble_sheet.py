@@ -60,8 +60,8 @@ def check_bubble_existence(gray_image):
     thresh = cv2.threshold(
         gray_image, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
     kernal = np.ones((2, 2), np.uint8)
-    thresh_closed = cv.morphologyEx(
-        thresh, cv.MORPH_CLOSE, kernal, iterations=1)
+    thresh_closed = cv2.morphologyEx(
+        thresh, cv2.MORPH_CLOSE, kernal, iterations=1)
     # find contours
     contours = cv2.findContours(
         thresh_closed.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -121,8 +121,8 @@ def get_num_of_row_bubbles(gray_image):
     thresh = cv2.threshold(
         gray_image, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
     kernal = np.ones((2, 2), np.uint8)
-    thresh_closed = cv.morphologyEx(
-        thresh, cv.MORPH_CLOSE, kernal, iterations=2)
+    thresh_closed = cv2.morphologyEx(
+        thresh, cv2.MORPH_CLOSE, kernal, iterations=2)
     if (see_details):
         show_images([gray_image, thresh_closed], [
                     'One Row Gray', 'After Closing'])
@@ -447,8 +447,8 @@ def do_work(data, see_steps):
         thresh = cv2.threshold(
             sections_gray[index], 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
         kernal = np.ones((2, 2), np.uint8)
-        thresh_closed = cv.morphologyEx(
-            thresh, cv.MORPH_CLOSE, kernal, iterations=3)
+        thresh_closed = cv2.morphologyEx(
+            thresh, cv2.MORPH_CLOSE, kernal, iterations=3)
 
         if (see_details):
             show_images([thresh_closed], [
