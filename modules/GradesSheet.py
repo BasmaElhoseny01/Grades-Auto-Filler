@@ -4,7 +4,7 @@ from modules.CellExtraction import *
 
 
 
-def GradesSheet(data,SVM):
+def GradesSheet(data,SVM,DSVM):
     Imagepath=data[3]
     index=data[4]
     OCR=data[5]
@@ -13,7 +13,7 @@ def GradesSheet(data,SVM):
     if(not Wrapped):
         print("Contours Failed to get Page")
     #Step2 Extract  Cells
-    CellExtractor(WarpedColoredImage,PageExtarcted,'./CellsExtracted/'+str(index)+"/",ExcelPath='./Excel/'+str(index)+".csv",SVM=SVM,OCR=OCR)
+    CellExtractor(WarpedColoredImage,PageExtarcted,'./CellsExtracted/'+str(index)+"/",ExcelPath='./Excel/'+str(index)+".xlsx",SVM=SVM,OCR=OCR,DSVM=DSVM)
     
 #Step 3 Cell Detector
 #Step 4 Save to Excel   

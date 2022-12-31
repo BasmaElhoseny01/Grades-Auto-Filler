@@ -4,7 +4,6 @@ from modules.utils import *
 def SVMTraining():
     # Get Xtrain
     # Get Y train
-
     Tick,QuestionMark,Square,Horizontal,Vertical=TrainedData()
     x_train=np.concatenate((Tick,QuestionMark,Square,Horizontal[0],Horizontal[1],Horizontal[2],Horizontal[3],Vertical[0],Vertical[1],Vertical[2],Vertical[3],Vertical[4]), axis=0)
     y_train=np.concatenate((["Tick"]*np.shape(Tick)[0]
@@ -38,7 +37,7 @@ def TrainedData():
     for filename in os.listdir(directory):
         f=os.path.join(directory,filename)
         if os.path.isfile(f):
-            # print(f)
+            print(f)
             image=cv2.imread(f, cv2.IMREAD_GRAYSCALE)
             # show_images([image],['asdf'])
             fd_1, hog_image_1=HogFun(image)
@@ -51,7 +50,7 @@ def TrainedData():
     for filename in os.listdir(directory):
         f=os.path.join(directory,filename)
         if os.path.isfile(f):
-            # print(f)
+            print(f)
             # image=cv2.imread(f,1)
             # show_images([image],['asdf'])
             image=cv2.imread(f, cv2.IMREAD_GRAYSCALE)
