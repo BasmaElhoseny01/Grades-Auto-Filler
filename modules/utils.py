@@ -4,45 +4,40 @@ import numpy as np
 import pandas as pd
 import skimage.io as io
 import matplotlib.pyplot as plt
-from skimage.color import rgb2gray,rgb2hsv
+from skimage.color import rgb2gray, rgb2hsv
 import math
 from skimage.transform import resize
-
+from openpyxl import load_workbook
 import pytesseract
 from sklearn import svm
 from skimage.feature import hog
 import os
 
 
-# Read RGB image uisng CV and result is a RGB image
-# def Read_RGB_Image(path):
-#     image=cv.imread(path,1)#cv2.IMREAD_COLOR: It specifies to load a color image. Any transparency of image will be neglected.
-#     # Converting BGR color to RGB color format
-#     RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-#     return RGB_img
-
-
 def HogFun(img_1):
     resized_img_1 = resize(img_1, (128*4, 64*4))
 
-    #creating hog features
-    fd_1, hog_image_1 = hog(resized_img_1, orientations=9, pixels_per_cell=(8, 8),cells_per_block=(2, 2), visualize=True, multichannel=False)
+    # creating hog features
+    fd_1, hog_image_1 = hog(resized_img_1, orientations=9, pixels_per_cell=(
+        8, 8), cells_per_block=(2, 2), visualize=True, multichannel=False)
     # show_images([img_1,resized_img_1,hog_image_1],["Gray","Resized","hog_image"])
     # Fd Faeture
     #     print(np.shape(fd_1))
-    return fd_1,hog_image_1
+    return fd_1, hog_image_1
 
-def show_images(images,titles=None):
-    #This function is used to show image(s) with titles by sending an array of images and an array of associated titles.
+
+def show_images(images, titles=None):
+    # This function is used to show image(s) with titles by sending an array of images and an array of associated titles.
     # images[0] will be drawn with the title titles[0] if exists
     # You aren't required to understand this function, use it as-is.
     n_ims = len(images)
-    if titles is None: titles = ['(%d)' % i for i in range(1,n_ims + 1)]
+    if titles is None:
+        titles = ['(%d)' % i for i in range(1, n_ims + 1)]
     fig = plt.figure()
     n = 1
-    for image,title in zip(images,titles):
-        a = fig.add_subplot(1,n_ims,n)
-        if image.ndim == 2: 
+    for image, title in zip(images, titles):
+        a = fig.add_subplot(1, n_ims, n)
+        if image.ndim == 2:
             plt.gray()
         plt.imshow(image)
         a.set_title(title)
@@ -55,11 +50,11 @@ def showHist(img):
     # An "interface" to matplotlib.axes.Axes.hist() method
     plt.figure()
     imgHist = histogram(img, nbins=256)
-    
+
     bar(imgHist[1].astype(np.uint8), imgHist[0], width=0.8, align='center')
 
 
-#Reorder 4 Points in clockwise order, starting from top left
+# Reorder 4 Points in clockwise order, starting from top left
 def reorderPoints(points):
 
     points = points.reshape((4, 2))
@@ -67,65 +62,66 @@ def reorderPoints(points):
     add = points.sum(1)
 
     newPoints[0] = points[np.argmin(add)]
-    newPoints[3] =points[np.argmax(add)]
+    newPoints[3] = points[np.argmax(add)]
     diff = np.diff(points, axis=1)
-    newPoints[1] =points[np.argmin(diff)]
+    newPoints[1] = points[np.argmin(diff)]
     newPoints[2] = points[np.argmax(diff)]
 
     return newPoints
-#Darw Reactangle
-def drawRectangle(img,biggest,thickness):
-    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]), (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
-    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]), (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
-    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]), (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
-    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]), (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
+# Darw Reactangle
+
+
+def drawRectangle(img, biggest, thickness):
+    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]),
+             (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]),
+             (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]),
+             (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]),
+             (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
 
     return img
 
-# # Show images in plot
-# def Show_Images(images,titles):
-#     # Create Figure
-#     fig=plt.figure(figsize=(20, 10))
-    
-#     # Setting number of rows and columns
-#     columns=2 # 2columns
-#     rows=math.ceil(np.shape(images)[0]/columns) #No of rows    
-    
-#     n=1 #Counter for the subplots order
-#     for image,title in zip(images,titles):
-#         #Add subplot @ order postion 
-#         fig.add_subplot(rows, columns, n)
-#         n+=1
-#         plt.axis('off')
-#         plt.title(title)
-#         plt.imshow(image)
-        
-    
 
-# # Function to sort points in a contour in clockwise order, starting from top left
-# def processContour(approx):
-#     # Reshape array([x, y], ...) to array( array([x], [y]), ...)
-#     approx = approx.reshape((4, 2))
+def fill_grades(file_path, id, marks):
+    """
+    This function fills the excel sheet with the marks to the student with the given id.
+    Arguments:
+        file_path: String
+        id: Integer
+        marks: Array
+    """
 
-#     # Sort points in clockwise order, starting from top left
-#     pts = np.zeros((4, 2), dtype=np.float32)
+    # reading the file
+    file = load_workbook(file_path)
+    sheet = file.active
 
-#     # Add up all values
-#     # Smallest sum = top left point
-#     # Largest sum = bottom right point
-#     s = approx.sum(axis=1)
-#     pts[0] = approx[np.argmin(s)]
-#     pts[2] = approx[np.argmax(s)]
+    # Extracting some info
+    num_of_questions = len(marks)
+    id_location = 0
 
-#     # For the other 2 points, compute difference between all points
-#     # Smallest difference = top right point
-#     # Largest difference = bottom left point
-#     diff = np.diff(approx, axis=1)
-#     pts[1] = approx[np.argmin(diff)]
-#     pts[3] = approx[np.argmax(diff)]
+    # searching for the id
+    for index, cell in enumerate(sheet['A']):
+        if (cell.value == id):
+            id_location = index + 1
+            break
 
-#     # Calculate smallest height and width
-#     width = int(min(pts[1][0] - pts[0][0], pts[2][0] - pts[3][0]))
-#     height = int(min(pts[3][1] - pts[0][1], pts[2][1] - pts[1][1]))
+    # if the id was not found, throw an exception
+    if (id_location == 0):
+        raise Exception("Id is not found")
 
-#     return pts, width, height
+    # assigning the marks to the row
+    counter = 0
+    for cell in (sheet.cell(row=id_location, column=i) for i in range(4, 4 + num_of_questions)):
+        cell.value = marks[counter]
+        counter = counter + 1
+
+#     for index, cell in enumerate(sheet[id_location]):
+#         if(index >= 3):
+#             cell.value = marks[counter]
+#             counter = counter + 1
+
+    # save the file with a new name
+    file.save(file_path)
+    return True
