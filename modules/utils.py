@@ -6,10 +6,12 @@ import skimage.io as io
 import matplotlib.pyplot as plt
 from skimage.color import rgb2gray,rgb2hsv
 import math
+from skimage.transform import resize
 
 import pytesseract
 from sklearn import svm
 from skimage.feature import hog
+import os
 
 
 # Read RGB image uisng CV and result is a RGB image
@@ -18,6 +20,17 @@ def Read_RGB_Image(path):
     # Converting BGR color to RGB color format
     RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     return RGB_img
+
+
+def HogFun(img_1):
+    resized_img_1 = resize(img_1, (128*4, 64*4))
+
+    #creating hog features
+    fd_1, hog_image_1 = hog(resized_img_1, orientations=9, pixels_per_cell=(8, 8),cells_per_block=(2, 2), visualize=True, multichannel=False)
+    # show_images([img_1,resized_img_1,hog_image_1],["Gray","Resized","hog_image"])
+    # Fd Faeture
+    #     print(np.shape(fd_1))
+    return fd_1,hog_image_1
 
 def show_images(images,titles=None):
     #This function is used to show image(s) with titles by sending an array of images and an array of associated titles.

@@ -2,7 +2,7 @@ from modules.utils import *
 from modules.CellDetector import *
 from modules.SaveToExcel import *
 
-def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath):
+def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM):
     # print(np.max(Page_Extracted))
     # print(np.shape(Page_Extracted))
     # Page_Extracted=rgb2gray(Page_Extracted)
@@ -162,7 +162,7 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath):
                     io.imsave(CellsSavePath+str(i)+str(j)+str(k)+'.jpg',thresh)
                     # options = "outputbase digits"
 
-                    s=CellDetection(thresh,j)                    
+                    s=CellDetection(thresh,j,SVM)                    
                     # out = pytesseract.image_to_string( thresh,config=options)
                     # show_images([thresh])
                     # io.imsave(CellsSavePath+str(i)+str(j)+str(k)+'.jpg',thresh)

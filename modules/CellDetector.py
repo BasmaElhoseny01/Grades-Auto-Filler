@@ -1,8 +1,9 @@
 from modules.utils import *
+from modules.SymbolDetector import SymbolValue
 
 #Input Binary Cell
 #Index=0 =>Code Column
-def CellDetection(cell,index):
+def CellDetection(cell,index,SVM):
     s=''
     if(index==3):
         #Code detection using OCR
@@ -18,5 +19,5 @@ def CellDetection(cell,index):
 
     elif(index==1 or index==2):
         #Symbols
-
+         s =s+" "+str(SymbolValue(cell,SVM))
     return s
