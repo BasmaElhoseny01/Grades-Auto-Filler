@@ -1,5 +1,5 @@
 
-def Table_Extraction(path,ocrFunction = None):
+def Page_Extraction(path,ocrFunction = None):
     # Dictonary to store data to be returned
     ret = {}
     # Read Image

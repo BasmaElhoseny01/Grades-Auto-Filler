@@ -1,5 +1,5 @@
 # Imports
-import cv2 as cv
+import cv2
 import numpy as np
 import skimage.io as io
 import matplotlib.pyplot as plt
@@ -40,6 +40,30 @@ def showHist(img):
     
     bar(imgHist[1].astype(np.uint8), imgHist[0], width=0.8, align='center')
 
+
+#Reorder 4 Points in clockwise order, starting from top left
+def reorderPoints(points):
+
+    points = points.reshape((4, 2))
+    newPoints = np.zeros((4, 1, 2), dtype=np.int32)
+    add = points.sum(1)
+
+    newPoints[0] = points[np.argmin(add)]
+    newPoints[3] =points[np.argmax(add)]
+    diff = np.diff(points, axis=1)
+    newPoints[1] =points[np.argmin(diff)]
+    newPoints[2] = points[np.argmax(diff)]
+
+    return newPoints
+#Darw Reactangle
+def drawRectangle(img,biggest,thickness):
+    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]), (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[0][0][0], biggest[0][0][1]), (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]), (biggest[2][0][0], biggest[2][0][1]), (0, 255, 0), thickness)
+    cv2.line(img, (biggest[3][0][0], biggest[3][0][1]), (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
+
+    return img
+
 # # Show images in plot
 # def Show_Images(images,titles):
 #     # Create Figure
@@ -60,56 +84,30 @@ def showHist(img):
         
     
 
-# Function to sort points in a contour in clockwise order, starting from top left
-def processContour(approx):
-    # Reshape array([x, y], ...) to array( array([x], [y]), ...)
-    approx = approx.reshape((4, 2))
+# # Function to sort points in a contour in clockwise order, starting from top left
+# def processContour(approx):
+#     # Reshape array([x, y], ...) to array( array([x], [y]), ...)
+#     approx = approx.reshape((4, 2))
 
-    # Sort points in clockwise order, starting from top left
-    pts = np.zeros((4, 2), dtype=np.float32)
+#     # Sort points in clockwise order, starting from top left
+#     pts = np.zeros((4, 2), dtype=np.float32)
 
-    # Add up all values
-    # Smallest sum = top left point
-    # Largest sum = bottom right point
-    s = approx.sum(axis=1)
-    pts[0] = approx[np.argmin(s)]
-    pts[2] = approx[np.argmax(s)]
+#     # Add up all values
+#     # Smallest sum = top left point
+#     # Largest sum = bottom right point
+#     s = approx.sum(axis=1)
+#     pts[0] = approx[np.argmin(s)]
+#     pts[2] = approx[np.argmax(s)]
 
-    # For the other 2 points, compute difference between all points
-    # Smallest difference = top right point
-    # Largest difference = bottom left point
-    diff = np.diff(approx, axis=1)
-    pts[1] = approx[np.argmin(diff)]
-    pts[3] = approx[np.argmax(diff)]
+#     # For the other 2 points, compute difference between all points
+#     # Smallest difference = top right point
+#     # Largest difference = bottom left point
+#     diff = np.diff(approx, axis=1)
+#     pts[1] = approx[np.argmin(diff)]
+#     pts[3] = approx[np.argmax(diff)]
 
-    # Calculate smallest height and width
-    width = int(min(pts[1][0] - pts[0][0], pts[2][0] - pts[3][0]))
-    height = int(min(pts[3][1] - pts[0][1], pts[2][1] - pts[1][1]))
+#     # Calculate smallest height and width
+#     width = int(min(pts[1][0] - pts[0][0], pts[2][0] - pts[3][0]))
+#     height = int(min(pts[3][1] - pts[0][1], pts[2][1] - pts[1][1]))
 
-    return pts, width, height
-
-# Function to find the largest 4-sided contour from an array of countours
-def findLargestQuadrilateralContour(contours):
-    # Sort contours from smallest area to biggest
-    sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
-
-    biggest_contour = None
-    biggest_contour_approx = None
-
-    for cnt in sorted_contours:
-        # Get the length of the perimeter
-        perimeter = cv2.arcLength(cnt, True)
-
-        # Approximate a shape that resembles the contour
-        # This is needed because the image might be warped, thus
-        # edges are curved and not perfectly straight
-        approx = cv2.approxPolyDP(cnt, 0.01 * perimeter, True)
-
-        # Check if the approximation contains only 4 sides
-        # (i.e. quadrilateral)
-        if len(approx) == 4:
-            biggest_contour = cnt
-            biggest_contour_approx = approx
-            break
-
-    return [biggest_contour], [biggest_contour_approx]
+#     return pts, width, height

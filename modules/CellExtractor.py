@@ -1,20 +1,13 @@
-from modules.PageExtractor import *
+from modules.PageExtractorOld import *
 from modules.utils import *
 
-def CellExtractor(path,CellsSavePath):
-
-    img=io.imread(path)
-    imageArr=getPageWarped(img, thresh1=180)
-    show_images(imageArr,titles=['img','grayImg','thresholdedImg','imgWithContours','img','img'])
-    Table_Extracted=np.copy(imageArr[5])
-
-
-    # print(np.max(Table_Extracted))
-    # print(np.shape(Table_Extracted))
-    # Table_Extracted=rgb2gray(Table_Extracted)
+def CellExtractor(Page_Extracted,CellsSavePath):
+    # print(np.max(Page_Extracted))
+    # print(np.shape(Page_Extracted))
+    # Page_Extracted=rgb2gray(Page_Extracted)
     # Converting table to binary
-    thresh,img_bin = cv2.threshold(Table_Extracted,128,255,cv2.THRESH_BINARY)
-    # thresh,img_bin = cv2.threshold(Table_Extracted,128,255,cv2.THRESH_OTSU)
+    thresh,img_bin = cv2.threshold(Page_Extracted,128,255,cv2.THRESH_BINARY)
+    # thresh,img_bin = cv2.threshold(Page_Extracted,128,255,cv2.THRESH_OTSU)
 
     img_bin = 255-img_bin
     show_images([img_bin],titles=['Bianry Image'])
@@ -36,7 +29,7 @@ def CellExtractor(path,CellsSavePath):
     show_images([vertical_horizontal_lines,vertical_horizontal_lines_2],titles=['Added hor+v',' erosion to result'])
 
     thresh, vertical_horizontal_lines_3 = cv2.threshold(vertical_horizontal_lines_2,128,255, cv2.THRESH_BINARY)
-    b_image = cv2.bitwise_not(cv2.bitwise_xor(Table_Extracted,vertical_horizontal_lines_3))
+    b_image = cv2.bitwise_not(cv2.bitwise_xor(Page_Extracted,vertical_horizontal_lines_3))
     show_images([vertical_horizontal_lines_3,b_image],titles=['1','2'])
 
 
@@ -52,7 +45,7 @@ def CellExtractor(path,CellsSavePath):
     for contour in contours:
         x, y, w, h = cv2.boundingRect(contour)
         if (w<500 and h<500):
-            image = cv2.rectangle(Table_Extracted,(x,y),(x+w,y+h),(0,255,0),2)
+            image = cv2.rectangle(Page_Extracted,(x,y),(x+w,y+h),(0,255,0),2)
             boxes.append([x,y,w,h])
     plotting = plt.imshow(image,cmap='gray')
     plt.title("Identified contours")
@@ -113,7 +106,6 @@ def CellExtractor(path,CellsSavePath):
     for box in boxes_list:
         print(box)
 
-    import pytesseract
     dataframe_final=[]
     for i in range(len(boxes_list)):
         for j in range(len(boxes_list[i])):
