@@ -5,11 +5,11 @@ def Save_to_Excel(dataFrame,path):
     
     #Creating a dataframe of the generated OCR list
     dataframe =dataFrame
-    print("Datt",dataframe)
-    print("Datt",dataframe[3])
-    print("Datt",dataframe[2])
-    print("Datt",dataframe[1])
-    print("Datt",dataframe[0])
+    # print("Datt",dataframe)
+    # print("Datt",dataframe[3])
+    # print("Datt",dataframe[2])
+    # print("Datt",dataframe[1])
+    # print("Datt",dataframe[0])
     Code=np.copy(dataframe[3])
     Numbers=np.copy(dataframe[0])
     Col1=np.copy(dataframe[1])
@@ -38,7 +38,7 @@ def Save_to_Excel(dataFrame,path):
     dataframe = dataframe.applymap(lambda x: x.encode('unicode_escape').
                  decode('utf-8') if isinstance(x, str) else x)
     dataframe.style.applymap(lambda val: 'background-color: {}; color:{}'.format('transparent' if val != '-1' else 'red','black' if val != '-1' else 'red')).\
-            to_excel(path, engine='openpyxl')
+            to_excel(path, engine='openpyxl',header=False,index=False)
     # dataFrame.style.applymap(lambda val: 'background-color: {}; color:{}'.format('transparent' if val != '-1' else 'red','black' if val != '-1' else 'red')).to_csv(path)
     # dataFrame.to_csv(path,header=False,index=False)
     # dataFrame.style.apply('background-color: yellow').to_excel(path, engine='openpyxl')
