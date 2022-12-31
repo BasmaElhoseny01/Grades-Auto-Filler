@@ -4,14 +4,12 @@ from tkinter.filedialog import askopenfile
 import time
 from Code.modules.utils import *
 from Code.bubble_sheet import *
-
 from modules.GradesSheet import *
 
 
 # Trainng Model (to be in the Genral Main Function)
 from modules.SymbolTrain import SVMTraining
-
-model=SVMTraining()
+model = SVMTraining()
 
 ct.set_appearance_mode("dark")
 ct.set_default_color_theme("dark-blue")
@@ -83,7 +81,7 @@ def start():
     if (model == 2):
         # call do_work of table here
         print("Table")
-        GradesSheet(data,SVM=model)
+        GradesSheet(data, SVM=model)
     else:
         print('Please, choose a model to start.')
     pass

@@ -1,19 +1,19 @@
 # Imports
-import cv2
+import cv2 as cv
 import numpy as np
 import skimage.io as io
 import matplotlib.pyplot as plt
 import math
-# from openpyxl import load_workbook
+from openpyxl import load_workbook
 
 # Read RGB image uisng CV and result is a RGB image
 
 
 def Read_RGB_Image(path):
     # cv2.IMREAD_COLOR: It specifies to load a color image. Any transparency of image will be neglected.
-    image = cv2.imread(path, 1)
+    image = cv.imread(path, 1)
     # Converting BGR color to RGB color format
-    RGB_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     return RGB_img
 
 
