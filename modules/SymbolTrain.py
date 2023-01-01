@@ -23,7 +23,7 @@ def trainModel(x_train, y_train):
 
 def TrainedData():
     # Tick##########################################3
-    directory = './Data Set/Training Set/Tick'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Tick'
     Tick = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -36,7 +36,7 @@ def TrainedData():
             Tick.append(fd_1)
 
     # ??##########################################3
-    directory = './Data Set/Training Set/QuestionMark'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/QuestionMark'
     QuestionMark = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -50,7 +50,7 @@ def TrainedData():
             QuestionMark.append(fd_1)
 
     # Square##########################################3
-    directory = './Data Set/Training Set/Square'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Square'
     Square = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -65,7 +65,7 @@ def TrainedData():
 
     # Horizontal##########################################3
     # 1
-    directory = './Data Set/Training Set/Horizontal/1'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Horizontal/1'
     Horizontal_1 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -79,7 +79,7 @@ def TrainedData():
             Horizontal_1.append(fd_1)
 
     # 2
-    directory = './Data Set/Training Set/Horizontal/2'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Horizontal/2'
     Horizontal_2 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -92,7 +92,7 @@ def TrainedData():
             Horizontal_2.append(fd_1)
 
     # 3
-    directory = './Data Set/Training Set/Horizontal/3'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Horizontal/3'
     Horizontal_3 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -104,7 +104,7 @@ def TrainedData():
             Horizontal_3.append(fd_1)
 
     # 4
-    directory = './Data Set/Training Set/Horizontal/4'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Horizontal/4'
     Horizontal_4 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -131,7 +131,7 @@ def TrainedData():
 
     # Vertical##########################################3
     # 1
-    directory = './Data Set/Training Set/Vertical/1'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Vertical/1'
     Vertical_1 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -145,7 +145,7 @@ def TrainedData():
             Vertical_1.append(fd_1)
 
     # 2
-    directory = './Data Set/Training Set/Vertical/2'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Vertical/2'
     Vertical_2 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -159,7 +159,7 @@ def TrainedData():
             Vertical_2.append(fd_1)
 
     # 3
-    directory = './Data Set/Training Set/Vertical/3'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Vertical/3'
     Vertical_3 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -171,7 +171,7 @@ def TrainedData():
             Vertical_3.append(fd_1)
 
     # 4
-    directory = './Data Set/Training Set/Vertical/4'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Vertical/4'
     Vertical_4 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -183,7 +183,7 @@ def TrainedData():
             Vertical_4.append(fd_1)
 
     # 5
-    directory = './Data Set/Training Set/Vertical/5'
+    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Vertical/5'
     Vertical_5 = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):

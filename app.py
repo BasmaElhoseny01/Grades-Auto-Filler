@@ -1,3 +1,6 @@
+from modules.DigitsTrain import CodeTraining
+from modules.DigitsTrain import DigitTraining
+from modules.SymbolTrain import SVMTraining
 import customtkinter as ct
 from tkinter.ttk import *
 from tkinter.filedialog import askopenfile
@@ -7,18 +10,15 @@ from modules.bubble_sheet import *
 from modules.GradesSheet import *
 
 
-# Trainng Model (to be in the Genral Main Function)
-from modules.SymbolTrain import SVMTraining
+# Trainng Model(to be in the Genral/ Main Function)
 model = SVMTraining()
 
 # Trainng Model (to be in the Genral Main Function)
-from modules.DigitsTrain import DigitTraining
 Digitsmodel = DigitTraining()
 
 
-#Traning on Codes
-from modules.DigitsTrain import CodeTraining
-Codemodel=CodeTraining()
+# Traning on Codes
+Codemodel = CodeTraining()
 
 
 ct.set_appearance_mode("dark")
@@ -97,7 +97,7 @@ def start():
     if (model == 1):
         do_work(data, checkbox_var.get())
     if (model == 2):
-        GradesSheet(data, SVM=model, DSVM=Digitsmodel,CodeSVM=Codemodel)
+        GradesSheet(data, SVM=model, DSVM=Digitsmodel, CodeSVM=Codemodel)
     else:
         print('Please, choose a model to start.')
     pass
