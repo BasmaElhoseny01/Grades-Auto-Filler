@@ -2,7 +2,7 @@ from modules.utils import *
 from modules.CellDetector import *
 from modules.SaveToExcel import *
 
-def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,OCR,DSVM):
+def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,OCR,DSVM,CodeSVM):
     # print(np.max(Page_Extracted))
     # print(np.shape(Page_Extracted))
     # Page_Extracted=rgb2gray(Page_Extracted)
@@ -72,7 +72,7 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
     # plotting = plt.imshow(image,cmap='gray')
     # plt.title("Identified contours")
     # plt.show()
-    print("Boxes",np.shape(boxes))
+    # print("Boxes",np.shape(boxes))
 
     show_images([Page_Extracted,img_bin,vertical_horizontal_lines_3,Page_Extracted_With_Contours,Selected_Contours],titles=['Input of Cell Exatrction','Binary Image','Table Extracted Empty','After Table Mask is Applied','All Contours','SeletedContours'])
     # print("Boxes",np.shape(boxes))
@@ -84,7 +84,7 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
     columns=[]
     heights = [boundingBoxes[i][3] for i in range(len(boundingBoxes))]
     mean = np.mean(heights)
-    print(mean)
+    # print(mean)
     columns.append(boxes[0])
     previous=boxes[0]
     for i in range(1,len(boxes)):
@@ -98,29 +98,29 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
             columns=[]
             previous = boxes[i]
             columns.append(boxes[i])
-    print("Rows")
-    for row in rows:
-        print(row)
+    # print("Rows")
+    # for row in rows:
+    #     print(row)
     
-    print(np.shape(rows))
+    # print(np.shape(rows))
     
     # print("Rows",np.shape(rows))
-    # print("Columns",np.shape(columns))
+    print("Columns",np.shape(columns))
 
     # print("First Row",np.shape(rows[0]))
     total_cells=0
     for i in range(1,len(rows)):
         if len(rows[i]) > total_cells:
             total_cells = len(rows[i])
-    print("Total Cells",total_cells)
+    # print("Total Cells",total_cells)
 
 
 #    Center of Cell
     center = [int(rows[i][j][0]+rows[i][j][2]/2) for j in range(len(rows[i])) if rows[0]]
-    print("Center",center)
+    # print("Center",center)
     center=np.array(center)
     center.sort()
-    print("Center",center)
+    # print("Center",center)
 
 
     boxes_list = []
@@ -136,8 +136,8 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
     #         print(indexing)
             l[indexing-1].append(rows[i][j])
         boxes_list.append(l)
-    for box in boxes_list:
-        print(box)
+    # for box in boxes_list:
+        # print(box)
 
     dataframe_final=[]
     for i in range(len(boxes_list)):
@@ -162,7 +162,7 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
                     io.imsave(CellsSavePath+str(i)+str(j)+str(k)+'.jpg',thresh)
                     # options = "outputbase digits"
 
-                    s=CellDetection(thresh,j,SVM,OCR,DSVM)                    
+                    s=CellDetection(thresh,j,SVM,OCR,DSVM,CodeSVM)                    
                     # out = pytesseract.image_to_string( thresh,config=options)
                     # show_images([thresh])
                     # io.imsave(CellsSavePath+str(i)+str(j)+str(k)+'.jpg',thresh)
@@ -172,25 +172,8 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
                     # else:
                         # s = s +" "+ out
                 dataframe_final.append(s.strip())
-    # print(dataframe_final)
-
 
     arr = np.array(dataframe_final)
-
     dataframe = pd.DataFrame(arr.reshape(len(rows), total_cells))
     #Save to Excel
     Save_to_Excel(dataframe,ExcelPath)
-    # data = dataframe.style.set_properties(align="left")
-    # # print(data)
-    # # print(dataframe)
-    # # d=[]
-
-    # # for i in range(0,len(rows)):
-    # #     for j in range(0,total_cells):
-    # #         print(dataframe[i][j],end=" ")
-    # # print()
-
-    # print("Data Frame To excel",dataframe)
-    # print("Total No of Cells",total_cells)
-
-  

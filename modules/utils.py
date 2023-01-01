@@ -11,7 +11,13 @@ from openpyxl import load_workbook
 import pytesseract
 from sklearn import svm
 from skimage.feature import hog
+
+# from skimage.morphology import thin
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split,GridSearchCV
+
 import os
+import imutils
 
 
 def HogFun(img_1):

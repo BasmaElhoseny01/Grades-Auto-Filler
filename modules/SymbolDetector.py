@@ -5,7 +5,7 @@ def SymbolValue(cell,SVM):
   fd_pred_11, hog_image_pred_11=HogFun(cell)
   # Send cell to the Model
   Symbol=SVM.predict([fd_pred_11])
-  print(Symbol)
+#   print(Symbol)
 
   return getCorrectNumber(Symbol)
 
@@ -15,8 +15,18 @@ def DigitValue(cell,SVM):
 
     # Send cell to the Model
     Digit=SVM.predict([fd_pred_11])
-    print(Digit)
-    return Digit
+    # print(Digit[0])
+    return Digit[0]
+
+
+def CodeValue(cell,SVM):
+    fd_pred_11, hog_image_pred_11=HogFun(cell)
+
+    # Send cell to the Model
+    Digit=SVM.predict([fd_pred_11])
+    # print(Digit[0])
+    return Digit[0]
+
 
 #Calculate The Points Coresspondinf to this Symbol
 def getCorrectNumber(text):
