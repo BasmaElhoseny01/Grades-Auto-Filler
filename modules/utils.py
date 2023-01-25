@@ -2,33 +2,46 @@
 import cv2
 import numpy as np
 import pandas as pd
-import skimage.io as io
-import matplotlib.pyplot as plt
-from skimage.color import rgb2gray, rgb2hsv
 import math
-from skimage.transform import resize
-from openpyxl import load_workbook
-import pytesseract
-from sklearn import svm
-from skimage.feature import hog
+import matplotlib.pyplot as plt
+import imutils
 
-# from skimage.morphology import thin
+import skimage.io as io
+from skimage.color import rgb2gray, rgb2hsv
+from skimage.transform import resize
+from skimage.morphology import thin
+from skimage.feature import hog
+from skimage.exposure import histogram
+from matplotlib.pyplot import bar
+
+from sklearn import svm
+import pytesseract
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split,GridSearchCV
 
+from openpyxl import load_workbook
+import xlsxwriter
+
+
+#File System 
 import os
-import imutils
+from os import mkdir, path, getcwd
+
+def get_subdirectory(sd):
+    absolute_path = os.path.dirname(__file__)
+    dir = path.join(getcwd(), f'{absolute_path}/../{sd}')
+    if not path.isdir(dir):
+        mkdir(dir)
+    return dir
 
 
+# HOG Feature Extraction for a gray scale image
 def HogFun(img_1):
     resized_img_1 = resize(img_1, (128*4, 64*4))
 
     # creating hog features
     fd_1, hog_image_1 = hog(resized_img_1, orientations=9, pixels_per_cell=(
-        8, 8), cells_per_block=(2, 2), visualize=True, multichannel=False)
-    # show_images([img_1,resized_img_1,hog_image_1],["Gray","Resized","hog_image"])
-    # Fd Faeture
-    #     print(np.shape(fd_1))
+        8, 8), cells_per_block=(2, 2), visualize=True)
     return fd_1, hog_image_1
 
 
@@ -51,12 +64,11 @@ def show_images(images, titles=None):
     fig.set_size_inches(np.array(fig.get_size_inches()) * n_ims)
     plt.show()
 
-
+# Show Histogram of Gray Scale image
 def showHist(img):
     # An "interface" to matplotlib.axes.Axes.hist() method
     plt.figure()
     imgHist = histogram(img, nbins=256)
-
     bar(imgHist[1].astype(np.uint8), imgHist[0], width=0.8, align='center')
 
 
@@ -74,9 +86,8 @@ def reorderPoints(points):
     newPoints[2] = points[np.argmax(diff)]
 
     return newPoints
-# Darw Reactangle
 
-
+# Draw Rectangle
 def drawRectangle(img, biggest, thickness):
     cv2.line(img, (biggest[0][0][0], biggest[0][0][1]),
              (biggest[1][0][0], biggest[1][0][1]), (0, 255, 0), thickness)
@@ -122,11 +133,6 @@ def fill_grades(file_path, id, marks):
     for cell in (sheet.cell(row=id_location, column=i) for i in range(4, 4 + num_of_questions)):
         cell.value = marks[counter]
         counter = counter + 1
-
-#     for index, cell in enumerate(sheet[id_location]):
-#         if(index >= 3):
-#             cell.value = marks[counter]
-#             counter = counter + 1
 
     # save the file with a new name
     file.save(file_path)

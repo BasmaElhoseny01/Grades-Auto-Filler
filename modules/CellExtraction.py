@@ -74,7 +74,7 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
     # plt.show()
     # print("Boxes",np.shape(boxes))
 
-    show_images([Page_Extracted,img_bin,vertical_horizontal_lines_3,Page_Extracted_With_Contours,Selected_Contours],titles=['Input of Cell Exatrction','Binary Image','Table Extracted Empty','After Table Mask is Applied','All Contours','SeletedContours'])
+    # show_images([Page_Extracted,img_bin,vertical_horizontal_lines_3,Page_Extracted_With_Contours,Selected_Contours],titles=['Input of Cell Exatrction','Binary Image','Table Extracted Empty','After Table Mask is Applied','All Contours','SeletedContours'])
     # print("Boxes",np.shape(boxes))
     # print(boxes[0])
 
@@ -159,7 +159,10 @@ def CellExtractor(WarpedColoredImage,Page_Extracted,CellsSavePath,ExcelPath,SVM,
                     erosion = cv2.erode(dilation, kernel,iterations=2)
                     img3 = cv2.cvtColor(erosion, cv2.COLOR_BGR2GRAY)
                     thresh = cv2.threshold(img3, 127, 255, cv2.THRESH_OTSU + cv2.THRESH_BINARY_INV)[1]
-                    io.imsave(CellsSavePath+str(i)+str(j)+str(k)+'.jpg',thresh)
+                    
+                    # io.imsave(f"{get_subdirectory('1')}/ex.jpg")
+
+                    io.imsave(get_subdirectory(CellsSavePath)+str(i)+str(j)+str(k)+'.jpg',thresh)
                     # options = "outputbase digits"
 
                     s=CellDetection(thresh,j,SVM,OCR,DSVM,CodeSVM)                    

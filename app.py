@@ -1,25 +1,52 @@
-from modules.DigitsTrain import CodeTraining
-from modules.DigitsTrain import DigitTraining
-from modules.SymbolTrain import SVMTraining
 import customtkinter as ct
 from tkinter.ttk import *
 from tkinter.filedialog import askopenfile
 import time
+
+import pickle
+
+#Modules
 from modules.utils import *
+from modules.DigitsTrain import CodeTraining
+from modules.DigitsTrain import DigitTraining
+from modules.SymbolTrain import SVMTraining
 from modules.bubble_sheet import *
 from modules.GradesSheet import *
 
 
-# Trainng Model(to be in the Genral/ Main Function)
-model = SVMTraining()
+# Symbols Model
+filename = 'SymbolsModel.sav'
 
-# Trainng Model (to be in the Genral Main Function)
-Digitsmodel = DigitTraining()
+# Training Model on  Symbols (to be in the General/ Main Function)
+# SVMmodel = SVMTraining()
+# Save the model
+# pickle.dump(SVMmodel, open(filename, 'wb'))
+#Load Already Trained Model
+SVMmodel = pickle.load(open(filename, 'rb'))
 
 
-# Traning on Codes
-Codemodel = CodeTraining()
 
+# Symbols Model
+filename = 'Digits.sav'
+
+# Training Model on  Symbols (to be in the General/ Main Function)
+# Digitsmodel = DigitTraining()
+# Save the model
+# pickle.dump(Digitsmodel, open(filename, 'wb'))
+#Load Already Trained Model
+Digitsmodel = pickle.load(open(filename, 'rb'))
+
+
+
+# Codes Model
+filename = 'Codes.sav'
+
+# Training Model on  Codes (to be in the General/ Main Function)
+# Codemodel = CodeTraining()
+# Save the model
+# pickle.dump(Codemodel, open(filename, 'wb'))
+#Load Already Trained Model
+Codemodel = pickle.load(open(filename, 'rb'))
 
 ct.set_appearance_mode("dark")
 ct.set_default_color_theme("dark-blue")
@@ -97,7 +124,7 @@ def start():
     if (model == 1):
         do_work(data, checkbox_var.get())
     if (model == 2):
-        GradesSheet(data, SVM=model, DSVM=Digitsmodel, CodeSVM=Codemodel)
+        GradesSheet(data, SVM=SVMmodel, DSVM=Digitsmodel, CodeSVM=Codemodel)
     else:
         print('Please, choose a model to start.')
     pass

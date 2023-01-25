@@ -93,8 +93,8 @@ def GetCode(thresh,index,CodeSVM):
         digits.append(dig)
 
     print("Digits",digits)  
-    print("Shape",np.shape(digits))   
-    show_images(np.array(digits))
+    # print("Shape",np.shape(digits))   
+    # show_images(np.array(digits))
 
     return code
 

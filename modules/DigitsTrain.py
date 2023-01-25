@@ -1,8 +1,8 @@
 from modules.utils import *
-
 from sklearn.neighbors import KNeighborsClassifier
 
 
+# Train Classifier on the Digits from 0-9
 def DigitTraining():
 
     One, Two, Three, Four, Five, Six, Seven, Eight, Nine = TrainedNumbers()
@@ -20,7 +20,10 @@ def DigitTraining():
 
 def TrainedNumbers():
     # Zero##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/0'
+    absolute_path = os.path.dirname(__file__)
+    relative_path = "Data set/Training Set/numbers/0"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/0'
     Zero = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -33,7 +36,10 @@ def TrainedNumbers():
             Zero.append(fd_1)
 
     # One##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/1'
+    relative_path = "Data set/Training Set/numbers/1"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/1'
+    
     One = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -47,7 +53,10 @@ def TrainedNumbers():
 
 
 # Two##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/2'
+    relative_path = "Data set/Training Set/numbers/2"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/2'
+    
     Two = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -61,7 +70,10 @@ def TrainedNumbers():
 
 
 # Three##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/3'
+    relative_path = "Data set/Training Set/numbers/3"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/3'
     Three = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -74,7 +86,10 @@ def TrainedNumbers():
             Three.append(fd_1)
 
 # Four##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/4'
+    relative_path = "Data set/Training Set/numbers/4"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/4'
+    
     Four = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -87,7 +102,10 @@ def TrainedNumbers():
             Four.append(fd_1)
 
     # Five##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/5'
+    relative_path = "Data set/Training Set/numbers/5"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/5'
     Five = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -100,7 +118,10 @@ def TrainedNumbers():
             Five.append(fd_1)
 
 # Six##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/6'
+    relative_path = "Data set/Training Set/numbers/6"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/6'
+    
     Six = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -113,7 +134,10 @@ def TrainedNumbers():
             Six.append(fd_1)
 
     # Seven##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/7'
+    relative_path = "Data set/Training Set/numbers/7"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/7'
     Seven = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -126,7 +150,10 @@ def TrainedNumbers():
             Seven.append(fd_1)
 
     # Eight##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/8'
+    relative_path = "Data set/Training Set/numbers/8"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/8'
     Eight = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -138,7 +165,10 @@ def TrainedNumbers():
             fd_1, hog_image_1 = HogFun(image)
             Eight.append(fd_1)
     # Nine##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/9'
+    relative_path = "Data set/Training Set/numbers/9"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/numbers/9'
     Nine = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -173,7 +203,11 @@ def CodeTraining():
 
 def TrainedCodes():
     # Zero##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/0'
+    absolute_path = os.path.dirname(__file__)
+    relative_path = "Data set/Training Set/Code/0"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/0'
     Zero = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -186,7 +220,9 @@ def TrainedCodes():
             Zero.append(fd_1)
 
     # One##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/1'
+    relative_path = "Data set/Training Set/Code/1"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/1'
     One = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -200,7 +236,9 @@ def TrainedCodes():
 
 
 # Two##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/2'
+    relative_path = "Data set/Training Set/Code/2"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/2'
     Two = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -214,7 +252,9 @@ def TrainedCodes():
 
 
 # Three##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/3'
+    relative_path = "Data set/Training Set/Code/3"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/3'
     Three = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -227,7 +267,9 @@ def TrainedCodes():
             Three.append(fd_1)
 
 # Four##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/4'
+    relative_path = "Data set/Training Set/Code/4"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/4'
     Four = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -240,7 +282,9 @@ def TrainedCodes():
             Four.append(fd_1)
 
     # Five##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/5'
+    relative_path = "Data set/Training Set/Code/5"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/5'
     Five = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -253,7 +297,9 @@ def TrainedCodes():
             Five.append(fd_1)
 
 # Six##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/6'
+    relative_path = "Data set/Training Set/Code/6"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/6'
     Six = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -266,7 +312,9 @@ def TrainedCodes():
             Six.append(fd_1)
 
     # Seven##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/7'
+    relative_path = "Data set/Training Set/Code/7"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/7'
     Seven = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -279,7 +327,9 @@ def TrainedCodes():
             Seven.append(fd_1)
 
     # Eight##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/8'
+    relative_path = "Data set/Training Set/Code/8"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/8'
     Eight = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):
@@ -291,7 +341,9 @@ def TrainedCodes():
             fd_1, hog_image_1 = HogFun(image)
             Eight.append(fd_1)
     # Nine##########################################3
-    directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/9'
+    relative_path = "Data set/Training Set/Code/9"
+    directory = os.path.join(absolute_path,"..", relative_path)
+    # directory = '/home/mustafa_hamzawy/Desktop/final 2/Grades-Auto-Filler/Data set/Training Set/Code/9'
     Nine = []
     # Iterate over files in this Diretory
     for filename in os.listdir(directory):

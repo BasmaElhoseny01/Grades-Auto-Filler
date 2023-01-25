@@ -10,6 +10,7 @@ def GradesSheet(data,SVM,DSVM,CodeSVM):
     OCR=data[5]
     #Step1 Get Page Wrapped
     WarpedColoredImage,PageExtarcted,Wrapped=ExtractPaper(Imagepath)
+    print("Basma")
     if(not Wrapped):
         print("Contours Failed to get Page")
     #Step2 Extract  Cells
