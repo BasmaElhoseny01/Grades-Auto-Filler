@@ -13,6 +13,8 @@ from modules.SymbolTrain import SVMTraining
 from modules.bubble_sheet import *
 from modules.GradesSheet import *
 
+# pytesseract.pytesseract.tesseract_cmd = (r"D:\Tesseract-OCR")
+
 
 # Symbols Model
 filename = 'SymbolsModel.sav'

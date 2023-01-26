@@ -28,7 +28,7 @@ def CodeValue(cell,SVM):
     return Digit[0]
 
 
-#Calculate The Points Coresspondinf to this Symbol
+#Calculate The Points Coressponding to this Symbol
 def getCorrectNumber(text):
     if(text == 'Square'):
         return 0

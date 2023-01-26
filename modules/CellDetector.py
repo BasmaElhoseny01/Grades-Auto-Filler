@@ -4,19 +4,27 @@ from modules.SymbolDetector import SymbolValue,DigitValue,CodeValue
 #Input Binary Cell
 #Index=0 =>Code Column
 def CellDetection(cell,index,SVM,OCR,DSVM,CodeSVM):
+    print("inedxxx",index)
     s=''
     if(index==3):
-        if(OCR):
-            #Code detection using OCR
-            out = pytesseract.image_to_string(cell,config="outputbase digits")
-            out=out.replace("\n","").replace("|","").replace("_","").replace("[","").strip()
-            if(len(out)==0):
-                out = pytesseract.image_to_string(cell)
-            else:
-                s = s +" "+ out
+        # Code detection using OCR
+        out = pytesseract.image_to_string(cell,config="outputbase digits")
+        out=out.replace("\n","").replace("|","").replace("_","").replace("[","").strip()
+        if(len(out)==0):
+            out = pytesseract.image_to_string(cell)
         else:
-            # print("Code")
-            s=s+" "+GetCode(cell,index,CodeSVM)
+            s = s +" "+ out
+        # if(OCR):
+        #     #Code detection using OCR
+        #     out = pytesseract.image_to_string(cell,config="outputbase digits")
+        #     out=out.replace("\n","").replace("|","").replace("_","").replace("[","").strip()
+        #     if(len(out)==0):
+        #         out = pytesseract.image_to_string(cell)
+        #     else:
+        #         s = s +" "+ out
+        # else:
+        #     print("Code")
+        #     s=s+" "+GetCode(cell,index,CodeSVM)
     elif(index==0) :
         #HandWritten Numbers
         if(OCR):
@@ -67,7 +75,7 @@ def GetCode(thresh,index,CodeSVM):
     cnts = imutils.grab_contours(cnts)
     cv2.drawContours(vis_img_1, cnts, -1, 150, 15)
     # show_images([vis_img_1])
-    print("shape",np.shape(vis_img_1))
+    # print("shape",np.shape(vis_img_1))
 
 
 
@@ -92,7 +100,7 @@ def GetCode(thresh,index,CodeSVM):
         code=code+str(CodeValue(dig,CodeSVM))
         digits.append(dig)
 
-    print("Digits",digits)  
+    # print("Digits",digits)  
     # print("Shape",np.shape(digits))   
     # show_images(np.array(digits))
 
