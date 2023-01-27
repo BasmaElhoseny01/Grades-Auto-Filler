@@ -4,17 +4,26 @@
 
 ## <img  align= center width=50px height=50px src="https://thumbs.gfycat.com/HeftyDescriptiveChimneyswift-max-1mb.gif">Table of Content
 
+- <a href ="#overview">Overview</a>
 - <a href ="#started">Get Started</a>
 - <a href ="#GradedSheet">Graded Sheet Model</a>
+  - <a href ="#GradedSheetOverView">Overview</a>
+  - <a href ="#GradedSheetFlow">Flow Diagram</a>
+  - <a href ="#GradedSheetResults">Results</a>
 - <a href ="#Contributors">Bubble Sheet Model</a>
 - <a href ="#Contributors">Contributors</a>
 - <a href ="#License">License</a>
 
 
-decription
-project file
-area for the bubble sheet
+<hr style="background-color: #858584"></hr>
+<br>
 
+## <img  align= center width=50px height=50px src="https://media3.giphy.com/media/psneItdLMpWy36ejfA/source.gif"> Overview<a id = "Overview"></a>
+- Project Based on Image Processing Techniques
+- We have 2 models
+  - Graded Sheet Model
+  - Bubble Sheet Model
+- <a href="https://github.com/BasmaElhoseny01/Grades-Auto-Filler/blob/main/Grades%20autofiller%20%5BOptional%20Idea%5D.pdf">Project Description</a>
 
 <hr style="background-color: #858584"></hr>
 <br>
@@ -57,31 +66,72 @@ python app.py
 <hr style="background-color: #858584"></hr>
 
 
-## <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Graded Sheet Model <a id = "GradedSheet"></a>
+<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Graded Sheet Model <a id = "GradedSheet"></a>
+</h2>
 
+
+### <img  align= center width=50px height=50px src="https://media1.giphy.com/media/3ohzdWYbITsO2Y5rbi/giphy.gif?cid=6c09b9523ys3hxe1y9ueyo5ab7nzkbhv9oev797jvb5bz6rt&rid=giphy.gif&ct=s"> OverView<a id = "GradedSheetOverView"></a>
+
+- It allows you to fill the grades electronically
+- It handles Skewing and orientation
+- Printed Student ID is detected using OCR and Feature and execration
+- Written Symbols like ✓ & x are detect using HOG feature extractor and predicted using SVM
+- Handwritten Code Values are detected using OCR and Feature and execration
+
+<hr width=80% ></hr>
+<br>
+
+### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Flow Diagram<a id = "GradedSheetFlow"></a>
+<br>
 <img  align= center src="https://user-images.githubusercontent.com/72309546/214973165-b164f1f5-1220-425b-b27a-c39ed6bb6422.jpg">
 
-
+<hr width=80% ></hr>
 <br>
 
-### <img  align= center width=50px height=50px src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png"> Results<a id = "started"></a>
+### <img  align= center width=50px height=50px src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png"> Results<a id = "GradedSheetResults"></a>
 
-<img src="https://user-images.githubusercontent.com/72309546/214974224-78a989df-7c81-4493-ad32-78d708ab7128.jpg">
+<h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Grade Sheet (1)<a id = "results"></a>
+</h4>
+
+
+<table>
+  <tr>
+    <td width=40% valign="center"><img src="https://user-images.githubusercontent.com/72309546/214974224-78a989df-7c81-4493-ad32-78d708ab7128.jpg"/></td>
+    <td valign="center"><img src="https://static.thenounproject.com/png/1724670-200.png"/></td>
+    <td width=40% valign="center"><img src="https://user-images.githubusercontent.com/72309546/214975386-6cea9197-86ae-4ddb-a560-5cb6e892744b.png"/></td>
+  </tr>
+</table>
 
 <img width="855" alt="s8" src="https://user-images.githubusercontent.com/72309546/214975379-f8e21411-357c-4315-99b9-b4bdaab58f35.png">
-<img width="259" alt="G8" src="https://user-images.githubusercontent.com/72309546/214975386-6cea9197-86ae-4ddb-a560-5cb6e892744b.png">
+
 <br>
-<img src="https://user-images.githubusercontent.com/72309546/214974691-2800aa3c-9118-4828-95d6-86c021faf902.jpg">
+<hr width=50% ></hr>
+
+<h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Grade Sheet (2)<a id = "results"></a>
+</h4>
+
+<table>
+  <tr>
+    <td width=40% valign="center"><img src="https://user-images.githubusercontent.com/72309546/214974691-2800aa3c-9118-4828-95d6-86c021faf902.jpg"/></td>
+    <td valign="center"><img src="https://static.thenounproject.com/png/1724670-200.png"/></td>
+    <td width=40% valign="center"><img src="https://user-images.githubusercontent.com/72309546/214975080-ca47d906-f7ef-472c-ae91-098fd46b0525.png"/></td>
+  </tr>
+</table>
 
 <img width="836" alt="s1" src="https://user-images.githubusercontent.com/72309546/214975070-ab030140-ba6a-4965-a3ae-82b31ed4d174.png">
 
-<img width="224" alt="r1" src="https://user-images.githubusercontent.com/72309546/214975080-ca47d906-f7ef-472c-ae91-098fd46b0525.png">
+<!-- <hr style="background-color: #858584"></hr>
+
+
+<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Bubble Sheet Model <a id = "GradedSheet"></a>
+</h2>
+ -->
 
 <br>
 <hr style="background-color: #858584"></hr>
 <br>
 
-## <img  align= center width=50px height=50px src="https://cdn.dribbble.com/users/2918596/screenshots/10001475/teamwork.gif"> Contributors <a id = "Contributors"></a>
+## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif?cid=6c09b952tmewuarqtlyfot8t8i0kh6ov6vrypnwdrihlsshb&rid=giphy.gif&ct=s"> Contributors <a id = "Contributors"></a>
 
 <table>
   <tr>
