@@ -22,6 +22,18 @@
   - Bubble Sheet Model
 - <a href="https://github.com/BasmaElhoseny01/Grades-Auto-Filler/blob/main/Grades%20autofiller%20%5BOptional%20Idea%5D.pdf">Project Description</a>
 
+## <img  align= center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/215230425-03645465-e762-42ae-9772-947ca1b01401.png">Technology <a id = "Technolgies"></a>
+
+<div>
+<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" />
+
+<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" />
+
+<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/800px-OpenCV_Logo_with_text_svg_version.svg.png" />
+<img height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/2560px-Scikit_learn_logo_small.svg.png" />
+<img height="40" src="https://miro.medium.com/max/490/1*9Gbo-HOvajpbya5RsLN1uw.png" />
+
+</div>
 
 ## <img  align= center width=50px height=50px src="https://cdn.pixabay.com/animation/2022/07/31/06/27/06-27-17-124_512.gif">Get Started <a id = "started"></a>
 
