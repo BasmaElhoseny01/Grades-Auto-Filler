@@ -1,5 +1,5 @@
 # Grades Auto Filler
- Image Procesisng Grades Auto filler Project 😉😉
+ Image Processing Grades Auto filler Project 😉😉
 
 
 ## <img  align= center width=50px height=50px src="https://thumbs.gfycat.com/HeftyDescriptiveChimneyswift-max-1mb.gif">Table of Content
