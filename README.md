@@ -6,15 +6,15 @@
 
 - <a href ="#overview">Overview</a>
 - <a href ="#started">Get Started</a>
-- <a href ="#GradedSheet">Graded Sheet Model</a>
-  - <a href ="#GradedSheetOverView">Overview</a>
-  - <a href ="#GradedSheetFlow">Flow Diagram</a>
-  - <a href ="#GradedSheetResults">Results</a>
-- <a href ="#BubbleSheet">Bubble Sheet Model</a>
+- <a href ="#graded_sheet">Graded Sheet Model</a>
+  - <a href ="#graded_sheet_overview">Overview</a>
+  - <a href ="#graded_sheet_flow">Flow Diagram</a>
+  - <a href ="#graded_sheet_results">Results</a>
+- <a href ="#bubble_sheet">Bubble Sheet Model</a>
   - <a href ="#bubble_sheet_overview">Overview</a>
   - <a href ="#bubble_sheet_flow">Demo Video</a>
-- <a href ="#Contributors">Contributors</a>
-- <a href ="#License">License</a>
+- <a href ="#contributors">Contributors</a>
+- <a href ="#license">License</a>
 
 
 ## <img  align= center width=50px height=50px src="https://media3.giphy.com/media/psneItdLMpWy36ejfA/source.gif"> Overview<a id = "overview"></a>
@@ -71,11 +71,11 @@ python app.py
 </li>
 </ol>
 
-<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Graded Sheet Model <a id = "GradedSheet"></a>
+<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Graded Sheet Model <a id = "graded_sheet"></a>
 </h2>
 
 
-### <img  align= center width=50px height=50px src="https://media1.giphy.com/media/3ohzdWYbITsO2Y5rbi/giphy.gif?cid=6c09b9523ys3hxe1y9ueyo5ab7nzkbhv9oev797jvb5bz6rt&rid=giphy.gif&ct=s"> OverView<a id = "GradedSheetOverView"></a>
+### <img  align= center width=50px height=50px src="https://media1.giphy.com/media/3ohzdWYbITsO2Y5rbi/giphy.gif?cid=6c09b9523ys3hxe1y9ueyo5ab7nzkbhv9oev797jvb5bz6rt&rid=giphy.gif&ct=s"> OverView<a id = "graded_sheet_overview"></a>
 
 - It allows you to fill the grades electronically
 - It handles Skewing and orientation
@@ -85,7 +85,7 @@ python app.py
 
 ***
 
-### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Flow Diagram<a id = "GradedSheetFlow"></a>
+### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Flow Diagram<a id = "graded_sheet_flow"></a>
 <br>
 <img  align=center width=500px src="https://user-images.githubusercontent.com/72309546/214973165-b164f1f5-1220-425b-b27a-c39ed6bb6422.jpg">
 
@@ -93,7 +93,7 @@ python app.py
 
 ***
 
-### <img  align= center width=50px height=50px src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png"> Results<a id = "GradedSheetResults"></a>
+### <img  align= center width=50px height=50px src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png"> Results<a id = "graded_sheet_results"></a>
 
 <h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Grade Sheet (1)<a id = "results"></a>
 </h4>
@@ -122,7 +122,7 @@ python app.py
 
 ***
 
-<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Bubble Sheet Model <a id = "BubbleSheet"></a>
+<h2 align=center > <img  align=center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/214907431-b4e250f1-9b3a-4149-b7b4-bbd17b833b97.png">Bubble Sheet Model <a id = "bubble_sheet"></a>
 </h2>
 
 ### <img  align= center width=50px height=50px src="https://media1.giphy.com/media/3ohzdWYbITsO2Y5rbi/giphy.gif?cid=6c09b9523ys3hxe1y9ueyo5ab7nzkbhv9oev797jvb5bz6rt&rid=giphy.gif&ct=s"> OverView<a id = "bubble_sheet_overview"></a>
@@ -146,7 +146,7 @@ Backup link : <a href="https://www.youtube.com/watch?v=WZZoWZTEEj0"> Demo </a>
 
 ***
  
-## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif?cid=6c09b952tmewuarqtlyfot8t8i0kh6ov6vrypnwdrihlsshb&rid=giphy.gif&ct=s"> Contributors <a id = "Contributors"></a>
+## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif?cid=6c09b952tmewuarqtlyfot8t8i0kh6ov6vrypnwdrihlsshb&rid=giphy.gif&ct=s"> Contributors <a id = "contributors"></a>
 
 <table>
   <tr>
@@ -180,5 +180,5 @@ Backup link : <a href="https://www.youtube.com/watch?v=WZZoWZTEEj0"> Demo </a>
  </table>
 
 
-## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ggoKD4cFbqd4nyugH2/giphy.gif?cid=6c09b9527jpi8kfxsj6eswuvb7ay2p0rgv57b7wg0jkihhhv&rid=giphy.gif&ct=s"> License <a id = "License"></a>
+## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ggoKD4cFbqd4nyugH2/giphy.gif?cid=6c09b9527jpi8kfxsj6eswuvb7ay2p0rgv57b7wg0jkihhhv&rid=giphy.gif&ct=s"> License <a id = "license"></a>
 This software is licensed under MIT License, See [License](https://github.com/BasmaElhoseny01/Grades-Auto-Filler/blob/main/LICENSE) for more information ©Basma Elhoseny.
