@@ -12,7 +12,9 @@
   - <a href ="#graded_sheet_results">Results</a>
 - <a href ="#bubble_sheet">Bubble Sheet Model</a>
   - <a href ="#bubble_sheet_overview">Overview</a>
-  - <a href ="#bubble_sheet_flow">Demo Video</a>
+  - <a href ="#bubble_sheet_flow">Flow Diagram</a>
+  - <a href ="#bubble_sheet_demo">Demo Video</a>
+  - <a href ="#bubble_sheet_results">Results</a>
 - <a href ="#contributors">Contributors</a>
 - <a href ="#license">License</a>
 
@@ -136,13 +138,72 @@ python app.py
 
 ***
 
-### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Demo Video<a id = "bubble_sheet_flow"></a>
+### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Flow Diagram<a id = "bubble_sheet_flow"></a>
+<br>
+
+<img  align=center width="100%" src="https://user-images.githubusercontent.com/72188665/216763496-a04bd2ca-2047-4784-808d-ae46f9c66409.PNG">
+
+<br>
+
+***
+
+### <img  align= center width=50px src="https://i2.wp.com/www.rankred.com/wp-content/uploads/2019/07/AI-solves-Rubik-Cube.gif?fit=800%2C433&ssl=1">Demo Video<a id = "bubble_sheet_demo"></a>
 <br>
 
 [bubble sheet demo video.webm](https://user-images.githubusercontent.com/72188665/215342210-81379189-88bc-4f78-a35a-191e8a0ddcb1.webm)
 
 <br>
 Backup link : <a href="https://www.youtube.com/watch?v=WZZoWZTEEj0"> Demo </a>
+
+***
+### <img  align= center width=50px height=50px src="https://cdn-icons-png.flaticon.com/512/1589/1589689.png"> Results<a id = "bubble_sheet_results"></a>
+
+<h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Bubble Sheet (1) </h4>
+<table>
+ <thead>
+    <tr>
+      <th>Input</th>
+      <th>Result</th>
+    </tr>
+   </thead>
+  <tr>
+    <td width=70% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764689-fe868642-d680-4d43-b6ac-b771aa2c67f7.jpg"/></td>
+    <td width=30% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764707-2a2e5420-a18a-4c3d-b3a7-3e43f7e446a4.png"/></td>
+  </tr>
+</table>
+
+
+<h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Bubble Sheet (2)
+</h4>
+
+<table>
+ <thead>
+    <tr>
+      <th>Input</th>
+      <th>Result</th>
+    </tr>
+   </thead>
+  <tr>
+    <td width=60% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764781-3ba0077f-de4d-4709-a472-d9662fc316ce.jpg"/></td>
+    <td width=40% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764783-b18b27f3-9512-4836-9561-98e9ab3f4cc9.png"/></td>
+  </tr>
+</table>
+
+<h4 align=center> <img  align= center width=50px height=50px src="https://media1.giphy.com/media/ZecwzuvmRrjOHsXNcI/giphy.gif?cid=6c09b9523btueuk8qe6usw2cnpb7qn8ki6evjwp62n2xiyi7&rid=giphy.gif&ct=s"> Bubble Sheet (3)
+</h4>
+<table>
+ <thead>
+    <tr>
+      <th>Input</th>
+      <th>Result</th>
+    </tr>
+   </thead>
+  <tr>
+    <td width=70% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764869-692e9b5f-d523-43af-a7f2-dda344c25b54.jpg"/></td>
+    <td width=30% valign="center"><img src="https://user-images.githubusercontent.com/72188665/216764876-ad0a1f05-5c7f-4585-a3f7-6e26d6f21dcc.png"/></td>
+  </tr>
+</table>
+
 
 ***
  
